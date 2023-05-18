@@ -1,6 +1,5 @@
 import React from "react";
-import banner1 from "../../assets/banner1.png";
-import banner2 from "../../assets/banner2.png";
+import banner1 from "../../../assets/banner1.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Banner.css";
 import { Carousel } from "react-responsive-carousel";
@@ -19,21 +18,15 @@ const Banner = () => {
         <button className="btn btn-warning">Shop Now</button>
       </div>
       <div className="mt-4 lg:w-2/3 mx-auto">
-        <Carousel interval={2000} infiniteLoop={true} autoPlay={true}>
-          <div className="image-slide">
-            <div className="image-container">
-              <img src={banner1} alt="Banner 2" />
-            </div>
+        <Carousel showThumbs={false} interval={2000} infiniteLoop={true} autoPlay={true}>
+          <div className="image-container">
+            <img src={banner1} alt="Banner 2" />
           </div>
-          <div className="image-slide">
-            <div className="image-container">
-              <img src={banner1} alt="Banner 2" />
-            </div>
+          <div className="image-container">
+            <img src={banner1} alt="Banner 2" />
           </div>
-          <div className="image-slide">
-            <div className="image-container">
-              <img src={banner1} alt="Banner 3" />
-            </div>
+          <div className="image-container">
+            <img src={banner1} alt="Banner 3" />
           </div>
         </Carousel>
       </div>
@@ -42,5 +35,3 @@ const Banner = () => {
 };
 
 export default Banner;
-{
-}
