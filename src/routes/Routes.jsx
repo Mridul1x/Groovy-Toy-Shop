@@ -5,6 +5,7 @@ import Home from "../components/Home/Home/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import ToyDetails from "../components/Home/Tabs/ToyDetails";
+import AllToysPage from "../allToys/AllToysPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/allToys",
+        element: <AllToysPage></AllToysPage>,
       },
       {
         path: "/product-category/:id",
