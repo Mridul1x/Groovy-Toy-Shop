@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -33,15 +34,18 @@ const ToysTabs = () => {
           {toys
             .filter((toy) => toy.subCategory === "Avengers")
             .map((toy) => (
-              <div key={toy.name} className="bg-white shadow-lg rounded-lg p-6 space-y-2">
+              <div
+                key={toy.name}
+                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
+              >
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
                 <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
                 <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
                 <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  View Details
+                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
                 </button>
               </div>
             ))}
@@ -53,15 +57,18 @@ const ToysTabs = () => {
           {toys
             .filter((toy) => toy.subCategory === "Star Wars")
             .map((toy) => (
-              <div key={toy.name} className="bg-white shadow-lg rounded-lg p-6 space-y-2">
-                <figure >
-                  <img  src={toy.pictureUrl} alt={toy.name} />
+              <div
+                key={toy.name}
+                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
+              >
+                <figure>
+                  <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
                 <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
                 <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
                 <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  View Details
+                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
                 </button>
               </div>
             ))}
@@ -73,15 +80,18 @@ const ToysTabs = () => {
           {toys
             .filter((toy) => toy.subCategory === "Transformers")
             .map((toy) => (
-              <div key={toy.name} className="bg-white shadow-lg rounded-lg p-6 space-y-2">
+              <div
+                key={toy.name}
+                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
+              >
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
                 <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
                 <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
                 <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  View Details
+                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
                 </button>
               </div>
             ))}
