@@ -40,57 +40,56 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li tabIndex={0}>
-              <a className="justify-between">All Toys</a>
+              <Link to="/alltoys">All Toys</Link>
             </li>
             <li>
-              <a>My Toys</a>
+              <Link to="/mytoys">My Toys</Link>
             </li>
             <li>
-              <a>Add A Toy</a>
+              <Link to="/addtoys">Add A Toy</Link>
             </li>
             <li>
-              <a>Blogs</a>
+              <Link to="/blogs">Blogs</Link>
             </li>
           </ul>
         </div>
         <div>
-          <img className="lg:w-5/6 lg:mx-auto" src={mainLogo1} alt="" />
+          <Link to="/">
+            <img className="lg:w-5/6 lg:mx-auto" src={mainLogo1} alt="" />
+          </Link>
         </div>
-        <a className="btn btn-ghost normal-case text-xl hidden lg:flex">
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case text-xl hidden lg:flex"
+        >
           Groovy
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li tabIndex={0}>
-            <a>All Toys</a>
+            <Link to="/alltoys">All Toys</Link>
           </li>
           <li>
-            <a>My Toys</a>
+            <Link to="/mytoys">My Toys</Link>
           </li>
           <li>
-            <a>Add A Toy</a>
+            <Link to="/addtoys">Add A Toy</Link>
           </li>
           <li>
-            <a>Blogs</a>
+            <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
         {user ? (
           <>
-            {/* <div
-              data-tip={user.displayName}
-              className="me-1 lg:me-2 tooltip tooltip-bottom "
-            >
-              <img className="w-6 lg:w-11 rounded-full " src={user.photoURL} />
-            </div> */}
             <div
               data-tip={user.displayName}
               className="avatar me-2 tooltip tooltip-bottom tooltip-warning"
