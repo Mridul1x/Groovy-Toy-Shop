@@ -19,9 +19,9 @@ export default {
 
           success: "#36D399",
 
-          warning: "#FBBD23",
+          warning: "#FCC327",
 
-          error: "#F87272",
+          error: "#EE1745",
         },
       },
     ],

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,7 @@ const AddAToy = () => {
         console.log(error);
       });
   }, []);
+
   const onSubmit = (data) => {
     console.log(data);
     fetch("http://localhost:5000/toys", {
@@ -31,7 +33,17 @@ const AddAToy = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          Swal.fire({
+            icon: "success",
+            title: "Your toy has been updated",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
       .catch((error) => {
         const errorMessage = error.message;
         return errorMessage;
