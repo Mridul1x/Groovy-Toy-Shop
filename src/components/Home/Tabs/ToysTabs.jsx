@@ -35,7 +35,7 @@ const ToysTabs = () => {
             .filter((toy) => toy.subCategory === "Avengers")
             .map((toy) => (
               <div
-                key={toy.name}
+                key={toy._id}
                 className="bg-white shadow-lg rounded-lg p-6 space-y-2"
               >
                 <figure>
@@ -58,7 +58,7 @@ const ToysTabs = () => {
             .filter((toy) => toy.subCategory === "Star Wars")
             .map((toy) => (
               <div
-                key={toy.name}
+                key={toy._id}
                 className="bg-white shadow-lg rounded-lg p-6 space-y-2"
               >
                 <figure>
@@ -81,7 +81,7 @@ const ToysTabs = () => {
             .filter((toy) => toy.subCategory === "Transformers")
             .map((toy) => (
               <div
-                key={toy.name}
+                key={toy._id}
                 className="bg-white shadow-lg rounded-lg p-6 space-y-2"
               >
                 <figure>

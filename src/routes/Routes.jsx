@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../components/Home/Home/Home";
 import Login from "../components/Login/Login";
@@ -9,6 +9,7 @@ import AllToysPage from "../allToys/AllToysPage";
 import PrivateRoute from "./PrivateRoute";
 import AddAToy from "../addAToy/AddAToy";
 import MyToys from "../myToys/myToys";
+import UpdateToys from "../myToys/UpdateToys";
 
 const router = createBrowserRouter([
   {
@@ -44,9 +45,19 @@ const router = createBrowserRouter([
         path: "/mytoys",
         element: (
           <PrivateRoute>
-            <MyToys></MyToys>
+            <Outlet />
           </PrivateRoute>
         ),
+        children: [
+          {
+            path: "/mytoys",
+            element: <MyToys />,
+          },
+          {
+            path: ":id/update",
+            element: <UpdateToys />,
+          },
+        ],
       },
       {
         path: "/product-category/:id",

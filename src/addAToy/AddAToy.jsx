@@ -51,167 +51,173 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="bg-[#F4F3F0] p-12">
-      <h2 className="text-3xl font-extrabold text-center">Add Toy</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* row-1 */}
-        <div className="flex mb-6">
-          <div className="form-control w-1/2">
-            <label className="label">
-              <span className="label-text">Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("name", { required: true })}
-                type="text"
-                placeholder="Enter Coffee Name"
-                name="name"
-                className="input input-bordered w-full"
-              />
-            </label>
+    <div className="bg-black p-8">
+      <div className="bg-red-500 rounded-2xl">
+        <form className="p-6 " onSubmit={handleSubmit(onSubmit)}>
+          {/* row-1 */}
+          <h2 className="text-3xl font-extrabold text-center mb-4 ">Add Toy</h2>
+          <div className="flex mb-6">
+            <div className="form-control w-1/2">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("name", { required: true })}
+                  type="text"
+                  placeholder="Enter Coffee Name"
+                  name="name"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control ms-8 w-1/2">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("pictureUrl", { required: true })}
+                  type="text"
+                  name="pictureUrl"
+                  placeholder="Enter toy picture Url"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control ms-8 w-1/2">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("pictureUrl", { required: true })}
-                type="text"
-                name="pictureUrl"
-                placeholder="Enter toy picture Url"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* row-2 */}
+          <div className="flex mb-6">
+            <div className="form-control w-1/2">
+              <label className="label">
+                <span className="label-text">Seller Name</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("sellerName", { required: true })}
+                  type="text"
+                  defaultValue={user?.displayName}
+                  placeholder="sellerName"
+                  name="sellerName"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control ms-8 w-1/2">
+              <label className="label">
+                <span className="label-text">Seller Email</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("sellerEmail", { required: true })}
+                  type="text"
+                  defaultValue={user?.email}
+                  placeholder="sellerEmail"
+                  name="sellerEmail"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* row-2 */}
-        <div className="flex mb-6">
-          <div className="form-control w-1/2">
-            <label className="label">
-              <span className="label-text">Seller Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("sellerName", { required: true })}
-                type="text"
-                defaultValue={user?.displayName}
-                placeholder="sellerName"
-                name="sellerName"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* row-3 */}
+          <div className="flex mb-6">
+            <div className="form-control w-1/2">
+              <label className="label">
+                <span className="label-text">Sub Category</span>
+              </label>
+              <label className="input-group">
+                <select
+                  required
+                  className="input input-bordered w-full"
+                  {...register("subCategory", { required: true })}
+                  defaultValue="Avenger"
+                >
+                  {subCategories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div className="form-control ms-8 w-1/2">
+              <label className="label">
+                <span className="label-text">Price</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("price", { required: true })}
+                  type="text"
+                  name="price"
+                  placeholder="Enter price"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control ms-8 w-1/2">
-            <label className="label">
-              <span className="label-text">Seller Email</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("sellerEmail", { required: true })}
-                type="text"
-                defaultValue={user?.email}
-                placeholder="sellerEmail"
-                name="sellerEmail"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* row-4 */}
+          <div className="flex mb-6">
+            <div className="form-control w-1/2 ">
+              <label className="label">
+                <span className="label-text">Rating</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("rating", { required: true })}
+                  type="text"
+                  placeholder="Rating"
+                  name="rating"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control ms-8 w-1/2 ">
+              <label className="label">
+                <span className="label-text">Available QuantityL</span>
+              </label>
+              <label className="input-group">
+                <input
+                  required
+                  {...register("availableQuantity", { required: true })}
+                  type="text"
+                  placeholder="availableQuantity"
+                  name="availableQuantity"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* row-3 */}
-        <div className="flex mb-6">
-          <div className="form-control w-1/2">
-            <label className="label">
-              <span className="label-text">Sub Category</span>
-            </label>
-            <label className="input-group">
-              <select
-                required
-                className="input input-bordered w-full"
-                {...register("subCategory", { required: true })}
-                defaultValue="Avenger"
-              >
-                {subCategories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </label>
+          {/* row-5 */}
+          <div className="flex mb-6">
+            <div className="form-control w-full ">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <label className="input-group">
+                <textarea
+                  required
+                  {...register("description", { required: true })}
+                  type="text"
+                  placeholder="description"
+                  name="description"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control ms-8 w-1/2">
-            <label className="label">
-              <span className="label-text">Price</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("price", { required: true })}
-                type="text"
-                name="price"
-                placeholder="Enter price"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        {/* row-4 */}
-        <div className="flex mb-6">
-          <div className="form-control w-1/2 ">
-            <label className="label">
-              <span className="label-text">Rating</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("rating", { required: true })}
-                type="text"
-                placeholder="Rating"
-                name="rating"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-          <div className="form-control ms-8 w-1/2 ">
-            <label className="label">
-              <span className="label-text">Available QuantityL</span>
-            </label>
-            <label className="input-group">
-              <input
-                required
-                {...register("availableQuantity", { required: true })}
-                type="text"
-                placeholder="availableQuantity"
-                name="availableQuantity"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        {/* row-5 */}
-        <div className="flex mb-6">
-          <div className="form-control w-full ">
-            <label className="label">
-              <span className="label-text">Description</span>
-            </label>
-            <label className="input-group">
-              <textarea
-                required
-                {...register("description", { required: true })}
-                type="text"
-                placeholder="description"
-                name="description"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        <input type="submit" className="btn btn-block" value="Add Toy" />
-      </form>
+          <input
+            type="submit"
+            className="btn btn-warning hover:bg-[#f1d997] text-base btn-block"
+            value="Add Toy"
+          />
+        </form>
+      </div>
     </div>
     // <div>
     //   <form onSubmit={handleSubmit(onSubmit)}>

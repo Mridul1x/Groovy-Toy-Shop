@@ -47,7 +47,9 @@ const Register = () => {
     <div className="hero mt-12">
       <div className="hero-contentl">
         <div className="card w-full lg:w-96 shadow-2xl bg-base-100">
-          <h1 className="text-4xl font-bold pt-5 text-center">Please Register</h1>
+          <h1 className="text-4xl font-bold pt-5 text-center">
+            Please Register
+          </h1>
           <form onSubmit={handleButton} className="card-body">
             <div className="form-control">
               <label className="label">
