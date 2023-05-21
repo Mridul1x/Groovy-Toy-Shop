@@ -16,8 +16,9 @@ const ToysTabs = () => {
   }, []);
 
   return (
-    <Tabs className="mt-12">
-      <TabList className="flex space-x-4 bg-red-500 p-4 justify-center">
+    <Tabs className="mt-12 lg:mt-16">
+      <h2 className="text-3xl text-center font-bold mb-4">Shop by Category</h2>
+      <TabList className="flex space-x-4 bg-red-500 p-4 justify-center items-center">
         <Tab className="px-4 py-2 text-white font-bold hover:bg-red-600 transition duration-300">
           Avengers
         </Tab>
@@ -36,17 +37,21 @@ const ToysTabs = () => {
             .map((toy) => (
               <div
                 key={toy._id}
-                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
+                className="bg-white card card-compact w-4/5 mx-auto shadow-lg rounded-lg p-6 space-y-2"
               >
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
-                <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
-                <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
-                <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
-                </button>
+                <div className="card-body"> 
+                  <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
+                  <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
+                  <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
+                  <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    <Link to={`/product-category/${toy._id}`}>
+                      View Details
+                    </Link>
+                  </button>
+                </div>
               </div>
             ))}
         </div>
@@ -58,19 +63,23 @@ const ToysTabs = () => {
             .filter((toy) => toy.subCategory === "Star Wars")
             .map((toy) => (
               <div
-                key={toy._id}
-                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
-              >
-                <figure>
-                  <img src={toy.pictureUrl} alt={toy.name} />
-                </figure>
-                <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
-                <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
-                <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
+              key={toy._id}
+              className="bg-white card card-compact w-4/5 mx-auto shadow-lg rounded-lg p-6 space-y-2"
+            >
+              <figure>
+                <img src={toy.pictureUrl} alt={toy.name} />
+              </figure>
+              <div className="card-body"> 
+                <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
+                <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
+                <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
+                <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
+                  <Link to={`/product-category/${toy._id}`}>
+                    View Details
+                  </Link>
                 </button>
               </div>
+            </div>
             ))}
         </div>
       </TabPanel>
@@ -82,17 +91,21 @@ const ToysTabs = () => {
             .map((toy) => (
               <div
                 key={toy._id}
-                className="bg-white shadow-lg rounded-lg p-6 space-y-2"
+                className="bg-white card card-compact w-4/5 mx-auto shadow-lg rounded-lg p-6 space-y-2"
               >
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
-                <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
-                <p className="text-gray-700 mb-2">Price: ${toy.price}</p>
-                <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
-                <button className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  <Link to={`/product-category/${toy._id}`}>View Details</Link>
-                </button>
+                <div className="card-body"> 
+                  <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
+                  <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
+                  <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
+                  <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    <Link to={`/product-category/${toy._id}`}>
+                      View Details
+                    </Link>
+                  </button>
+                </div>
               </div>
             ))}
         </div>

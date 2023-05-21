@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MutatingDots, ProgressBar } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const AllToysPage = () => {
   const [toys, setToys] = useState([]);
@@ -34,27 +35,34 @@ const AllToysPage = () => {
 
   return (
     <div>
-      <h1>All Toys</h1>
-      <div className="mb-4">
-        <input
-          type="text"
-          placeholder="Search by Toy Name"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button className="ml-2" onClick={handleSearch}>
-          Search
-        </button>
+      <div className="bg-red-500 p-4 text-center">
+        <h1 className=" text-white font-bold text-2xl mb-2">All Toys</h1>
+        <div>
+          <input
+            type="text"
+            placeholder="Search by Toy Name"
+            value={searchTerm}
+            className="p-2 rounded"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button
+            className="ml-2 bg-white p-2 rounded  "
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
       </div>
+
       {loading ? (
         <ProgressBar
-        height="80"
-        width="80"
-        ariaLabel="progress-bar-loading"
-        wrapperClass="progress-bar-wrapper"
-        borderColor = '#EC1D24'
-        barColor = '#FFDE00'
-      />
+          height="80"
+          width="80"
+          ariaLabel="progress-bar-loading"
+          wrapperClass="progress-bar-wrapper"
+          borderColor="#EC1D24"
+          barColor="#FFDE00"
+        />
       ) : (
         <div className="overflow-x-auto">
           <table className="table table-normal w-full table-auto">
@@ -77,8 +85,13 @@ const AllToysPage = () => {
                   <td>${toy.price}</td>
                   <td>{toy.availableQuantity}</td>
                   <td>
-                    <button key={toy._id}>
-                      <a href={`/product-category/${toy._id}`}>View Details</a>
+                    <button
+                      className=" bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none"
+                      key={toy._id}
+                    >
+                      <Link to={`/product-category/${toy._id}`}>
+                        View Details
+                      </Link>
                     </button>
                   </td>
                 </tr>

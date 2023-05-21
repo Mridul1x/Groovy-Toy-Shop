@@ -179,7 +179,7 @@ const AddAToy = () => {
             </div>
             <div className="form-control ms-8 w-1/2 ">
               <label className="label">
-                <span className="label-text">Available QuantityL</span>
+                <span className="label-text">Available Quantity</span>
               </label>
               <label className="input-group">
                 <input

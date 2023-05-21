@@ -5,7 +5,7 @@ import Banner from "../components/Home/Banner/Banner";
 
 const Main = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Navbar></Navbar>
       <Outlet></Outlet>
     </div>

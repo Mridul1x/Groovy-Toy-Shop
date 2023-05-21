@@ -76,12 +76,20 @@ const Navbar = () => {
           <li tabIndex={0}>
             <Link to="/alltoys">All Toys</Link>
           </li>
-          <li>
-            <Link to="/mytoys">My Toys</Link>
-          </li>
-          <li>
-            <Link to="/addtoys">Add A Toy</Link>
-          </li>
+
+          {user?.email ? (
+            <>
+              <li>
+                <Link to="/mytoys">My Toys</Link>
+              </li>
+              <li>
+                <Link to="/addtoys">Add A Toy</Link>
+              </li>
+            </>
+          ) : (
+            ""
+          )}
+
           <li>
             <Link to="/blogs">Blogs</Link>
           </li>
