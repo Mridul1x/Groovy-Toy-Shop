@@ -15,7 +15,7 @@ const MyToys = () => {
 
   useEffect(() => {
     if (userEmail) {
-      const url = `http://localhost:5000/toys?email=${encodeURIComponent(
+      const url = `https://assignment-11-toy-server-indol.vercel.app/toys?email=${encodeURIComponent(
         userEmail
       )}`;
       fetch(url)
@@ -42,7 +42,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://assignment-11-toy-server-indol.vercel.app/toys/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

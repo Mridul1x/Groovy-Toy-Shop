@@ -37,20 +37,26 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li tabIndex={0}>
+            <li className="" tabIndex={0}>
               <Link to="/alltoys">All Toys</Link>
             </li>
-            <li>
-              <Link to="/mytoys">My Toys</Link>
-            </li>
-            <li>
-              <Link to="/addtoys">Add A Toy</Link>
-            </li>
+            {user?.email ? (
+              <>
+                <li>
+                  <Link to="/mytoys">My Toys</Link>
+                </li>
+                <li>
+                  <Link to="/addtoys">Add A Toy</Link>
+                </li>
+              </>
+            ) : (
+              ""
+            )}
             <li>
               <Link to="/blogs">Blogs</Link>
             </li>
@@ -69,7 +75,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 ">
           <li>
             <Link to="/">Home</Link>
           </li>

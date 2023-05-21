@@ -10,11 +10,13 @@ import PrivateRoute from "./PrivateRoute";
 import AddAToy from "../addAToy/AddAToy";
 import MyToys from "../myToys/myToys";
 import UpdateToys from "../myToys/UpdateToys";
+import ErrorPage from "../error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -43,7 +45,8 @@ const router = createBrowserRouter([
             <AddAToy></AddAToy>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/toys`),
+        loader: () =>
+          fetch(`https://assignment-11-toy-server-indol.vercel.app/toys`),
       },
       {
         path: "/mytoys",
@@ -71,7 +74,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://assignment-11-toy-server-indol.vercel.app/toys/${params.id}`
+          ),
       },
     ],
   },

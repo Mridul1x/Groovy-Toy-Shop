@@ -19,7 +19,7 @@ const MyToys = () => {
     setToys(updatedToys);
     setSuccessMessage("Toy updated successfully!");
 
-    const url = `http://localhost:5000/toys/${selectedToy._id}`;
+    const url = `https://assignment-11-toy-server-indol.vercel.app/toys/${selectedToy._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -49,7 +49,7 @@ const MyToys = () => {
   };
   useEffect(() => {
     if (userEmail) {
-      const url = `http://localhost:5000/toys?email=${encodeURIComponent(
+      const url = `https://assignment-11-toy-server-indol.vercel.app/toys?email=${encodeURIComponent(
         userEmail
       )}`;
       fetch(url)

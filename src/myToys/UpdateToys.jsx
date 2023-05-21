@@ -15,7 +15,7 @@ const UpdateToys = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toys/${id}`)
+    fetch(`https://assignment-11-toy-server-indol.vercel.app/toys/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setUpdatedToy({
@@ -44,7 +44,7 @@ const UpdateToys = () => {
     };
 
     e.preventDefault();
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://assignment-11-toy-server-indol.vercel.app/toys/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

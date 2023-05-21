@@ -9,7 +9,7 @@ const AddAToy = () => {
   const { register, handleSubmit } = useForm();
   useEffect(() => {
     // Fetch the toy data from the server
-    fetch("http://localhost:5000/toys")
+    fetch("https://assignment-11-toy-server-indol.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         // Extract unique subCategories from the toy data
@@ -25,7 +25,7 @@ const AddAToy = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/toys", {
+    fetch("https://assignment-11-toy-server-indol.vercel.app/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

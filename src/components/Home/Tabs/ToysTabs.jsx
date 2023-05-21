@@ -7,7 +7,7 @@ const ToysTabs = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://assignment-11-toy-server-indol.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -16,7 +16,7 @@ const ToysTabs = () => {
   }, []);
 
   return (
-    <Tabs className="mt-12 lg:mt-16">
+    <Tabs className="mt-12 ">
       <h2 className="text-3xl text-center font-bold mb-4">Shop by Category</h2>
       <TabList className="flex space-x-4 bg-red-500 p-4 justify-center items-center">
         <Tab className="px-4 py-2 text-white font-bold hover:bg-red-600 transition duration-300">
@@ -42,10 +42,16 @@ const ToysTabs = () => {
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
-                <div className="card-body"> 
-                  <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
-                  <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
-                  <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
+                <div className="card-body">
+                  <h3 className="card-title text-lg font-bold mb-2">
+                    {toy.name}
+                  </h3>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Price: ${toy.price}
+                  </p>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Rating: {toy.rating}
+                  </p>
                   <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
                     <Link to={`/product-category/${toy._id}`}>
                       View Details
@@ -63,23 +69,29 @@ const ToysTabs = () => {
             .filter((toy) => toy.subCategory === "Star Wars")
             .map((toy) => (
               <div
-              key={toy._id}
-              className="bg-white card card-compact w-4/5 mx-auto shadow-lg rounded-lg p-6 space-y-2"
-            >
-              <figure>
-                <img src={toy.pictureUrl} alt={toy.name} />
-              </figure>
-              <div className="card-body"> 
-                <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
-                <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
-                <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
-                <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
-                  <Link to={`/product-category/${toy._id}`}>
-                    View Details
-                  </Link>
-                </button>
+                key={toy._id}
+                className="bg-white card card-compact w-4/5 mx-auto shadow-lg rounded-lg p-6 space-y-2"
+              >
+                <figure>
+                  <img src={toy.pictureUrl} alt={toy.name} />
+                </figure>
+                <div className="card-body">
+                  <h3 className="card-title text-lg font-bold mb-2">
+                    {toy.name}
+                  </h3>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Price: ${toy.price}
+                  </p>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Rating: {toy.rating}
+                  </p>
+                  <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    <Link to={`/product-category/${toy._id}`}>
+                      View Details
+                    </Link>
+                  </button>
+                </div>
               </div>
-            </div>
             ))}
         </div>
       </TabPanel>
@@ -96,10 +108,16 @@ const ToysTabs = () => {
                 <figure>
                   <img src={toy.pictureUrl} alt={toy.name} />
                 </figure>
-                <div className="card-body"> 
-                  <h3 className="card-title text-lg font-bold mb-2">{toy.name}</h3>
-                  <p className="text-gray-700 mb-2 text-base">Price: ${toy.price}</p>
-                  <p className="text-gray-700 mb-2 text-base">Rating: {toy.rating}</p>
+                <div className="card-body">
+                  <h3 className="card-title text-lg font-bold mb-2">
+                    {toy.name}
+                  </h3>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Price: ${toy.price}
+                  </p>
+                  <p className="text-gray-700 mb-2 text-base">
+                    Rating: {toy.rating}
+                  </p>
                   <button className=" bg-red-500 hover:bg-red-600 text-base   text-white font-bold py-2 px-4 rounded focus:outline-none">
                     <Link to={`/product-category/${toy._id}`}>
                       View Details

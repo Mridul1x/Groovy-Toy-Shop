@@ -8,7 +8,7 @@ const AllToysPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toys`)
+    fetch(`https://assignment-11-toy-server-indol.vercel.app/toys`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,11 @@ const AllToysPage = () => {
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toys?search=${encodeURIComponent(searchTerm)}`)
+    fetch(
+      `https://assignment-11-toy-server-indol.vercel.app/toys?search=${encodeURIComponent(
+        searchTerm
+      )}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
