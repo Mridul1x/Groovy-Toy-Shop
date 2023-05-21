@@ -26,7 +26,7 @@ const AddAToy = () => {
   }, []);
 
   const onSubmit = (data) => {
-    console.log(data);
+
     fetch("https://assignment-11-toy-server-indol.vercel.app/toys", {
       method: "POST",
       headers: {
@@ -36,7 +36,7 @@ const AddAToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+     
         if (data.acknowledged) {
           Swal.fire({
             icon: "success",

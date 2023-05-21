@@ -36,7 +36,6 @@ const Register = () => {
           photoURL: photoUrl,
         });
         setSuccess("Registration Successful");
-        console.log(user);
       })
       .catch((error) => {
         const errorMessage = error.message;

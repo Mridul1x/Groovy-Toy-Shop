@@ -6,16 +6,15 @@ import { AuthContext } from "../provider/AuthProvider";
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
   if (loading) {
     return (
-        <ProgressBar
+      <ProgressBar
         height="80"
         width="80"
         ariaLabel="progress-bar-loading"
         wrapperClass="progress-bar-wrapper"
-        borderColor = '#EC1D24'
-        barColor = '#FFDE00'
+        borderColor="#EC1D24"
+        barColor="#FFDE00"
       />
     );
   }

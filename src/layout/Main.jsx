@@ -6,10 +6,14 @@ import Footer from "../shared/Footer";
 
 const Main = () => {
   return (
-    <div className="">
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div className="flex flex-col">
+      <div className="flex-grow">
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+      </div>
+      <div className="flex-shrink-0">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

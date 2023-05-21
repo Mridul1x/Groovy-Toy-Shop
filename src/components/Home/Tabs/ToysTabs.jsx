@@ -10,7 +10,6 @@ const ToysTabs = () => {
     fetch("https://assignment-11-toy-server-indol.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setToys(data);
       });
   }, []);
