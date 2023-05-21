@@ -152,7 +152,7 @@ const AddAToy = () => {
                 <input
                   required
                   {...register("price", { required: true })}
-                  type="text"
+                  type="number"
                   name="price"
                   placeholder="Enter price"
                   className="input input-bordered w-full"

@@ -2,22 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProgressBar } from "react-loader-spinner";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
-import { FaGoogle, FaUpload } from "react-icons/fa";
-import { MdUpdate } from "react-icons/md";
-import { Link } from "react-router-dom";
 import MyToysDetails from "./MyToysDetails";
-
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [loading, setLoading] = useState(true);
   const userEmail = user.email;
+  const [sortBy, setSortBy] = useState("asc");
 
   useEffect(() => {
     if (userEmail) {
       const url = `https://assignment-11-toy-server-indol.vercel.app/toys?email=${encodeURIComponent(
         userEmail
-      )}`;
+      )}&sort=${sortBy}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
@@ -29,7 +27,7 @@ const MyToys = () => {
           console.log(errorMessage);
         });
     }
-  }, [userEmail]);
+  }, [userEmail, sortBy]);
 
   const handleDeleteButton = (_id) => {
     Swal.fire({
@@ -57,9 +55,12 @@ const MyToys = () => {
       }
     });
   };
-
+  const handleSortChange = (event) => {
+    const newSortBy = sortBy === "asc" ? "desc" : "asc";
+    setSortBy(newSortBy);
+  };
   return (
-    <div>
+    <div className="">
       {loading ? (
         <ProgressBar
           height="80"
@@ -70,16 +71,31 @@ const MyToys = () => {
           barColor="#FFDE00"
         />
       ) : (
-        <div className="overflow-x-auto">
-          <table className="table table-normal w-full table-auto">
+        <div className="overflow-x-auto ">
+          <div className="bg-red-500 p-4 text-center">
+            <h1 className=" text-white font-bold text-2xl mb-2">My Toys</h1>
+          </div>
+
+          <table className="table table-normal table-auto mx-auto w-11/12">
             <thead className=" red-500">
               <tr>
                 <th>Seller</th>
                 <th>Toy Name</th>
                 <th>Sub-category</th>
-                <th>Price</th>
+                <th className="flex items-center">
+                  Price
+                  <button className="ms-2" onClick={handleSortChange}>
+                    {sortBy === "asc" ? (
+                      <FaArrowDown></FaArrowDown> // Down arrow
+                    ) : (
+                      <FaArrowUp></FaArrowUp> // Up arrow
+                    )}
+                  </button>
+                </th>
                 <th>Available Quantity</th>
-                <th></th>
+                <th>
+                  <div className="">Sort by:</div>
+                </th>
                 <th></th>
               </tr>
             </thead>

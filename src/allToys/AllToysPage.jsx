@@ -68,7 +68,7 @@ const AllToysPage = () => {
           barColor="#FFDE00"
         />
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto mx-auto w-11/12">
           <table className="table table-normal w-full table-auto">
             <thead className=" red-500">
               <tr>
