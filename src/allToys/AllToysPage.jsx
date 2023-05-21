@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { MutatingDots, ProgressBar } from "react-loader-spinner";
 import { Link } from "react-router-dom";
+import useTitlte from "../hooks/useTitlte";
 
 const AllToysPage = () => {
+  useTitlte("All Toys")
   const [toys, setToys] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);

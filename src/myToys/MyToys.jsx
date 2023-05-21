@@ -4,7 +4,9 @@ import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import MyToysDetails from "./MyToysDetails";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
+import useTitlte from "../hooks/useTitlte";
 const MyToys = () => {
+  useTitlte("My Toys")
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [loading, setLoading] = useState(true);

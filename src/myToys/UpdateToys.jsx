@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitlte from "../hooks/useTitlte";
 
 const UpdateToys = () => {
+  useTitlte("Update Toys")
   // const navigate = useNavigate();
   const { id } = useParams();
 

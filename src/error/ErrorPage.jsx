@@ -1,8 +1,10 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useRouteError } from "react-router-dom";
+import useTitlte from "../hooks/useTitlte";
 
 const ErrorPage = () => {
+  useTitlte("Error Page")
   const error = useRouteError();
   console.error(error);
   return (

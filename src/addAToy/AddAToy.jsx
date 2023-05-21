@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitlte from "../hooks/useTitlte";
 
 const AddAToy = () => {
+  useTitlte("Add Toys")
   const { user } = useContext(AuthContext);
   const [subCategories, setSubCategories] = useState([]);
   const { register, handleSubmit } = useForm();

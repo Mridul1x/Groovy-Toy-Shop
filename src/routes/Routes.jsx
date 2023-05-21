@@ -12,6 +12,7 @@ import AddAToy from "../addAToy/AddAToy";
 import UpdateToys from "../myToys/UpdateToys";
 import ErrorPage from "../error/ErrorPage";
 import MyToys from "../myToys/MyToys";
+import Blog from "../components/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -24,16 +25,16 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
         path: "/login",
         element: <Login></Login>,
       },
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/blogs",
+        element: <Blog></Blog>,
       },
       {
         path: "/allToys",

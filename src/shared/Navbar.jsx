@@ -3,8 +3,10 @@ import React, { useContext } from "react";
 import mainLogo1 from "../assets/mainLogo1.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import useTitlte from "../hooks/useTitlte";
 
 const Navbar = () => {
+  useTitlte("Home")
   const { user, logout } = useContext(AuthContext);
   const handleLogOut = () => {
     logout()
