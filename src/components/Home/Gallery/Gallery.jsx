@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 }); // Initialize AOS with desired options
+  }, []);
   const settings = {
     dots: true,
     infinite: true,
@@ -43,8 +48,10 @@ const Gallery = () => {
   };
 
   return (
-    <div className="mt-6 lg:mt-10 px-7">
-      <h2 className="text-3xl text-center font-bold mb-6 lg:mb-10">Toys Gallery</h2>
+    <div data-aos="fade-up" data-aos-delay="1000" className="mt-6 lg:mt-10 px-7">
+      <h2 className="text-3xl text-center font-bold mb-6 lg:mb-10">
+        Toys Gallery
+      </h2>
       <Slider responsive={true} {...settings}>
         <div>
           <img
